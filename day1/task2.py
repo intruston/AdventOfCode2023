@@ -12,7 +12,6 @@ def process_strings_from_file(file_path):
         for line in file:
             #find all words and numbers (\d)
             matches = re.findall(r'(one|two|three|four|five|six|seven|eight|nine|\d)', line)
-            # Add the condition for "twone" explicitly
             all_extracted_numbers.extend(matches)
             modified_number = '00'
 
@@ -33,11 +32,11 @@ def process_strings_from_file(file_path):
 
     return all_extracted_numbers, modified_numbers, str(total_sum)
 
-#deal with twone and oneight manually
+#deal with twone, oneight, eightwo manually
 file_path = 'input2.txt'
 extracted_numbers, modified_numbers, total_sum = process_strings_from_file(file_path)
 
 print("Extracted Numbers:", extracted_numbers)
 print("Modified Numbers:", modified_numbers)
 print("Length Numbers:", len(extracted_numbers))
-print("Sum of All Modified Numbers:", total_sum)
+print("Sum of All Modified Numbers:", total_sum) #correct is 53348
